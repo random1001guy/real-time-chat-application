@@ -12,15 +12,22 @@ const addUser = ({ id, name, room }) => {
 
     const user = { id, name, room };
     users.push(user);
-
+    //logUsers();
     return { user };
 };
 
-const removeUser = (id) => {
-    const index = users.find((user) => user.id === id);
+const logUsers = () => {
+    console.log(users);
+};
 
+const removeUser = (id) => {
+    //console.log('Id reveived '+id);
+    const index = users.findIndex((user) => user.id === id );
+    //console.log('index is '+index);
     if(index !== -1){
-        return users.splice(index,1)[0];
+        let ret = users.splice(index,1)[0];
+        //logUsers();
+        return ret;
     }
 };
 

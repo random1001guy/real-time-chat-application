@@ -35,19 +35,24 @@ io.on('connection', (socket) => {
 
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id);
-
-        io.to(user.room).emit('message', { user: user.name, text : message});
-        io.to(user.room).emit('roomData', { room : user.room, users: getUsersInRoom(user.room) });
-        callback();
+        if(user){
+            //console.log(user.name + ' with id ' +socket.id +' said ' + message);
+            io.to(user.room).emit('message', { user: user.name, text : message});
+            io.to(user.room).emit('roomData', { room : user.room, users: getUsersInRoom(user.room) });
+            callback();
+        }
+        else{
+            console.log('Invalid User!');
+        }
     });
 
     socket.on('disconnect', () => {
         const user = removeUser(socket.id);
-
+        //console.log('removeUser returned '+user);
         if(user) {
             io.to(user.room).emit('message', { user: 'admin', text: `${user.name} has left` });
+            console.log(`${user.name} has left!`);
         }
-        
     })
 }); 
 
