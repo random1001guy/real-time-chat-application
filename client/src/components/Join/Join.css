@@ -39,6 +39,8 @@ html, body {
   }
   
   .button {
+      border: none;
+      position: relative;
       color: #fff !important;
       text-transform: uppercase;
       text-decoration: none;
@@ -48,7 +50,32 @@ html, body {
       display: inline-block;
       border: none;
       width: 100%;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      overflow: hidden;
+      cursor: pointer;
   }
+
+  .button:after {
+    content: "";
+    background: blueviolet;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-top: -120%;
+    margin-left: -20px !important;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+  
   
   .mt-20 {
     margin-top: 20px;

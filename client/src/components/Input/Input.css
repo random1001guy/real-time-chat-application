@@ -18,6 +18,8 @@
   }
   
   .sendButton {
+    border: none;
+    position: relative;
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
@@ -27,5 +29,28 @@
     border: none;
     width: 20%;
     border-radius: 0 0 4px 0;
-    
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .sendButton:after {
+    content: "";
+    background: lightgreen;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-top: -120%;
+    margin-left: -20px !important;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  .sendButton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
   }

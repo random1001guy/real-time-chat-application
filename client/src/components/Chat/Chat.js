@@ -71,7 +71,7 @@ const Chat = ({ location }) => {
             </div>
             <div className="footer">
                 <p>Made by 
-                    <a href="https://github.com/random1001guy" target="_blank"> random1001guy</a>
+                    <a href="https://github.com/random1001guy" rel="noreferrer" target="_blank"> random1001guy</a>
                 </p>
             </div>
         </div>

@@ -3,7 +3,10 @@
     justify-content: center;
     align-items: top;
     height: 100vh;
-    background-color: #1A1A1D;
+    background: #1D4350;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   }
   
   .container {
@@ -17,10 +20,10 @@
     margin-top: 5%;
   }
   a {
-    color: cyan;
+    color: yellow;
   }
   a:hover {
-    color: hotpink;
+    color: yellowgreen;
   }
   .footer {
     display: flex;
